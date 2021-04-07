@@ -5,7 +5,7 @@ import pandas as pd
 import sys
 from bs4 import BeautifulSoup as bs
 import re
-# from google.colab import files
+from google.colab import files
 
 def gettime():
     return int(round(time.time() * 1000))
@@ -162,16 +162,16 @@ def get_Chongqing_data(start_date='20201207', end_date='20210114'):
 def main():
     ChongQing_data = get_Chongqing_data('20210315','20210401')
     ChongQing_data.to_excel('Chongqing data.xlsx')
-    # files.download('Chongqing data.xlsx')
+    files.download('Chongqing data.xlsx')
     
 
     Shanghai_data_LNG = get_Shanghai_data(1,'LNG')
     Shanghai_data_LNG.to_excel('shanghai LNG data.xlsx')
-    # files.download('shanghai LNG data.xlsx')
+    files.download('shanghai LNG data.xlsx')
     
     Shanghai_data_pipeline = get_Shanghai_data(1,'pipeline')
     Shanghai_data_pipeline.to_excel('shanghai pipeline data.xlsx')
-    # files.download('shanghai pipeline data.xlsx')
+    files.download('shanghai pipeline data.xlsx')
     
 if __name__ == '__main__':
     main()
